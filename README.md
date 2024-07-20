@@ -1,5 +1,6 @@
 # NodeJS CRUD - 간단한 상점 시스템
 
+![NodeJS_CRUD_ERDiagram](https://github.com/user-attachments/assets/221359d6-2ef3-492b-ad8e-6ca317430ad8)
 ```SQL
 -- `crud-test`.`user` definition
 
