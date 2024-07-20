@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-crud",
+  "version": "1.0.0",
+  "description": "![NodeJS_CRUD_ERDiagram](https://github.com/user-attachments/assets/221359d6-2ef3-492b-ad8e-6ca317430ad8)\r ```SQL\r CREATE TABLE `user` (\r   `name` varchar(50) NOT NULL,\r   `address` varchar(100) NOT NULL,\r   `phone-number` varchar(100) NOT NULL,\r   `user_id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,\r   `pw_hash` varchar(100) NOT NULL,\r   PRIMARY KEY (`user_id`)\r ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
