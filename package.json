@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-crud",
+  "version": "1.0.0",
+  "description": "A Simple CRUD",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/hy2n/nodejs-crud"
+  },
+  "keywords": [
+    "crud"
+  ],
+  "author": "hy2n",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
