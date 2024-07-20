@@ -1,12 +1,6 @@
-const express = require('express');
+const app = require("./server/domain/application");
+const port = process.env.PORT || 3000;
 
-class App {
-    constructor() {
-        this.app = express();
-        this.setRoutes();
-    }
-    
-    setRoutes() {
-        this.app.use('/')
-    }
-}
+app.listen(port,() => {
+    console.log("Start")
+});
