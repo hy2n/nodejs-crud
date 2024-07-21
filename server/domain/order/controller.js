@@ -4,7 +4,41 @@ class OrderController {
     async GetAllOrder(req,res) {
         try {
             const orders = await repo.findAll();
-            return res.json(orders);
+            if (orders) return res.status(200).json(orders);
+            else return res.status(200).json({message : "no user"});
+        } catch (err) {
+            console.log(err);
+            return res.status(500).json({message : "Error! Repository Fail."})
+        }
+    }
+
+    async GetOrderByUserId(req,res) {
+        try {
+            const orders = await repo.findByUserId(req.params.id);
+            if (orders) return res.status(200).json(orders);
+            else return res.status(200).json({message : "no user"});
+        } catch (err) {
+            console.log(err);
+            return res.status(500).json({message : "Error! Repository Fail."})
+        }
+    }
+
+    async GetOrderByOrderId(req,res) {
+        try {
+            const orders = await repo.findByOrderId(req.params.id);
+            if (orders) return res.status(200).json(orders);
+            else return res.status(200).json({message : "no user"});
+        } catch (err) {
+            console.log(err);
+            return res.status(500).json({message : "Error! Repository Fail."})
+        }
+    }
+
+    async DeleteOrderByOrderId(req,res) {
+        try {
+            const orders = await repo.deleteByOrderId(req.params.id);
+            if (orders) return res.status(200).json({message : "success"});
+            else return res.status(200).json({message : "no user"});
         } catch (err) {
             console.log(err);
             return res.status(500).json({message : "Error! Repository Fail."})
