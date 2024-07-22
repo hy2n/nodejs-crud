@@ -16,9 +16,17 @@ class OrderRepository {
         if (rows.length === 0) return null;
         return rows.map(row => new Order(row.user_id, row.item_id, row.time, row.order_id, row.pay, row.status)); //모든 객체
     }
+    async updateByOrderId(id,data) {
+        if (!data.pay || !data.status) return null;
+        console.log(data);
+        const [result] = await pool.query('UPDATE `order` SET `pay` = ?, `status` = ? where `order_id` = ?' , 
+            [data.pay,data.status,id]);
+        if (result.affectedRows === 0 ) return null;
+        return true;
+    }
     async deleteByOrderId(id) {
-        const [rows] = await pool.query('DELETE FROM `order` where `order_id` = ?', [id]);
-        if (rows.affectedRows === 0 ) return null;
+        const [result] = await pool.query('DELETE FROM `order` where `order_id` = ?', [id]);
+        if (result.affectedRows === 0 ) return null;
         return true;
     }
 }

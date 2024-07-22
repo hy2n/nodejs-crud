@@ -34,6 +34,17 @@ class OrderController {
         }
     }
 
+    async UpdateOrderByOrderId(req,res) {
+        try {
+            const orders = await repo.updateByOrderId(req.params.id,req.body);
+            if (orders) return res.status(200).json({message : "success"});
+            else return res.status(200).json({message : "fail"});
+        } catch (err) {
+            console.log(err);
+            return res.status(500).json({message : "Error! Repository Fail."})
+        }
+    }
+
     async DeleteOrderByOrderId(req,res) {
         try {
             const orders = await repo.deleteByOrderId(req.params.id);
