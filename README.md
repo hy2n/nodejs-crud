@@ -1,6 +1,7 @@
 # NodeJS CRUD - 간단한 상점 시스템
 
-![image](https://github.com/user-attachments/assets/a27108c8-0670-4cd1-9600-5299df48eec1)
+![image](https://github.com/user-attachments/assets/de875fa3-050f-4858-a4eb-ef37d7ae9c77)
+
 
 ```SQL
 CREATE TABLE `product` (
@@ -22,13 +23,13 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE `order` (
-  `time` timestamp NOT NULL,
-  `date` date NOT NULL,
+  `time` datetime DEFAULT CURRENT_TIMESTAMP,
   `pay` int DEFAULT NULL,
   `status` varchar(50) NOT NULL,
   `order_id` varchar(100) NOT NULL,
   `user_id` varchar(100) NOT NULL,
   `item_id` varchar(100) NOT NULL,
+  PRIMARY KEY (`order_id`),
   KEY `fk_user` (`user_id`),
   KEY `fk_item` (`item_id`),
   CONSTRAINT `fk_item` FOREIGN KEY (`item_id`) REFERENCES `product` (`item_id`),
