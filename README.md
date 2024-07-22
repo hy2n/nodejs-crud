@@ -1,4 +1,6 @@
-# NodeJS CRUD - 간단한 상점 시스템
+# NodeJS CRUD with MVC Pattern
+
+MVC패턴을 적용한 간단한 상점 (Order,Prodect,User) 서버입니다
 
 ![image](https://github.com/user-attachments/assets/de875fa3-050f-4858-a4eb-ef37d7ae9c77)
 
