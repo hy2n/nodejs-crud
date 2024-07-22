@@ -18,7 +18,6 @@ class OrderRepository {
     }
     async updateByOrderId(id,data) {
         if (!data.pay || !data.status) return null;
-        console.log(data);
         const [result] = await pool.query('UPDATE `order` SET `pay` = ?, `status` = ? where `order_id` = ?' , 
             [data.pay,data.status,id]);
         if (result.affectedRows === 0 ) return null;
