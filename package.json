@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "mysql2": "^3.10.3"
+    "mysql2": "^3.10.3",
+    "uuid": "^10.0.0"
   }
 }

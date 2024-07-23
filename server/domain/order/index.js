@@ -8,6 +8,7 @@ router.get("/list",OrderController.GetAllOrder);
 router.get("/user/:id",OrderController.GetOrderByUserId);
 router.get("/:id",OrderController.GetOrderByOrderId);
 router.put("/:id",OrderController.UpdateOrderByOrderId);
+router.post("/",OrderController.AddOrderByOrderId);
 router.delete("/:id",OrderController.DeleteOrderByOrderId);
 
 module.exports = router;

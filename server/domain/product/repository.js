@@ -1,5 +1,6 @@
 const Product = require('./model');
 const pool = require('../../global/db');
+const { v4: uuidv4 } = require('uuid');
 
 class ProductReposiroty {
     async findAll() {
@@ -24,9 +25,9 @@ class ProductReposiroty {
         else return true
     }
     async addWithId(data) {
-        if (!data.item_id||!data.price||!data.name||!data.info||!data.moq) return null;
+        if (!data.price||!data.name||!data.info||!data.moq) return null;
         const [rows] = await pool.query("INSERT INTO `product` (item_id,price,name,info,moq)  VALUES (?,?,?,?,?)",
-            [data.item_id,data.price,data.name,data.info,data.moq]);
+            [uuidv4(),data.price,data.name,data.info,data.moq]);
         if (rows.length === 0) return null;
         else return true
     }

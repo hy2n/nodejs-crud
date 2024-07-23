@@ -1,5 +1,6 @@
 const Order = require('./model');
 const pool = require('../../global/db');
+const { v4: uuidv4 } = require('uuid');
 
 class OrderRepository {
     async findAll() {
@@ -27,6 +28,12 @@ class OrderRepository {
         const [result] = await pool.query('DELETE FROM `order` where `order_id` = ?', [id]);
         if (result.affectedRows === 0 ) return null;
         return true;
+    }
+    async addWithId(data) {
+        const [rows] = await pool.query("INSERT INTO `order` (item_id,user_id,order_id,pay,time,status)  VALUES (?,?,?,?,?,?)",
+            [data.item_id,data.user_id,uuidv4(),data.pay,new Date(),data.status]);
+        if (rows.length === 0) return null;
+        else return true
     }
 }
 
