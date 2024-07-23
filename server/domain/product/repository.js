@@ -24,7 +24,7 @@ class ProductReposiroty {
         if (rows.length === 0) return null;
         else return true
     }
-    async addWithId(data) {
+    async addProduct(data) {
         if (!data.price||!data.name||!data.info||!data.moq) return null;
         const [rows] = await pool.query("INSERT INTO `product` (item_id,price,name,info,moq)  VALUES (?,?,?,?,?)",
             [uuidv4(),data.price,data.name,data.info,data.moq]);

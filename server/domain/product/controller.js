@@ -47,7 +47,7 @@ class ProductController {
 
     async AddWithId(req,res) {
         try {
-            const Products = await repo.addWithId(req.body);
+            const Products = await repo.addProduct(req.body);
             if (Products) return res.status(200).json({message : "success"});
             else return res.status(200).json({message : "no product"});
         } catch (err) {
